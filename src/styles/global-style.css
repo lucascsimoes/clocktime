@@ -1,0 +1,18 @@
+:root {
+    --bg-primary: #0c0c0e;
+
+    --primary: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html, body {
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+}

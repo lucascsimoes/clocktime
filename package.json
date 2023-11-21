@@ -1,0 +1,22 @@
+{
+  "name": "clocktime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucascsimoes/clocktime.git"
+  },
+  "author": "Lucas Simoes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucascsimoes/clocktime/issues"
+  },
+  "homepage": "https://github.com/lucascsimoes/clocktime#readme",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
+}
