@@ -1,5 +1,0 @@
-body > *:not(.active) {
-    left: auto !important;
-    margin: 0 !important;
-    transform: scale(.3);
-}

@@ -1,20 +1,96 @@
 #digital {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
     position: absolute;
+    height: 350px;
+    border-radius: 15px;
+    padding: 30px;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     margin: auto;
-    width: 800px;
-    height: 350px;
-    border-radius: 15px;
-    background-color: var(--primary);
-    padding: 30px;
 }
 
-#digital > .screen {
-    width: 100%;
-    height: 100%;
-    background-color: #141414;
-    border-radius: 8px;
+#digital > span {
+    color: white;
+    font-size: 100px;
+}
+
+#digital > div > div > .line {
+    width: 10px;
+    height: 10px;
+    /* background-color: var(--primary); */
+    border-radius: 20px;
+    height: 100px;
+    width: 10px;
+}
+
+#digital > div {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+#digital > div > div {
+    position: relative;
+    bottom: 90px;
+}
+
+#digital > div > div > .line:nth-child(3n + 1) {
+    width: 100px;
+    height: 10px;
+}
+
+#digital > div > div > .line:nth-child(1) {
+}
+
+#digital > div > div > .line:nth-child(2),
+#digital > div > div > .line:nth-child(3) {
+}
+
+#digital > div > div > .line:nth-child(2),
+#digital > div > div > .line:nth-child(3),
+#digital > div > div > .line:nth-child(5),
+#digital > div > div > .line:nth-child(6) {
+    display: inline-block;
+    position: absolute;
+}
+
+#digital > div > div > .line:nth-child(2) {
+    right: 100%;
+}
+
+#digital > div > div > .line:nth-child(3) {
+    left: 100%;
+}
+
+#digital > div > div > .line:nth-child(4) {
+    position: relative;
+    top: 100px;
+}
+
+#digital > div > div > .line:nth-child(5),
+#digital > div > div > .line:nth-child(6) {
+    top: 120px;
+}
+
+#digital > div > div > .line:nth-child(5) {
+    right: 100%;
+}
+
+#digital > div > div > .line:nth-child(6) {
+    left: 100%;
+}
+
+#digital > div > div > .line:last-child {
+    position: relative;
+    top: 200px;
+}
+
+#digital > div > div > .line.active {
+    background-color: white !important;
+    box-shadow: 0px 0px 5px 0px #e0e0e0;
 }
