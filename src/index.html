@@ -12,8 +12,18 @@
     <title> ClockTime - No Seu Tempo </title>
 </head>
 <body>
+
+    <div class="changeClock to-analogic">
+        <p> Relógio Analógico </p>
+        <svg viewBox="0 0 512 512"><path d="M190.06 414l163.12-139.78a24 24 0 000-36.44L190.06 98c-15.57-13.34-39.62-2.28-39.62 18.22v279.6c0 20.5 24.05 31.56 39.62 18.18z"/></svg>
+    </div>
+
+    <div class="changeClock to-digital">
+        <svg viewBox="0 0 512 512"><path d="M321.94 98L158.82 237.78a24 24 0 000 36.44L321.94 414c15.57 13.34 39.62 2.28 39.62-18.22v-279.6c0-20.5-24.05-31.56-39.62-18.18z"/></svg>
+        <p> Relógio Digital </p>
+    </div>
     
-    <div id="analogic" class="active">
+    <div id="analogic">
         <div class="marks"></div>
         <div class="hour">
             <h1> 12 </h1>
@@ -107,6 +117,11 @@
                 <div class="line"></div>
             </div>
         </div>
+    </div>
+
+    <div id="transitionContainer">
+        <img class="analogic-img" src="./images/relogio-de-pulso.png">
+        <img class="digital-img" src="./images/relogio-digital.png">
     </div>
 
     <script src="index.js"></script>

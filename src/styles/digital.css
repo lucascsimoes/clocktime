@@ -12,6 +12,11 @@
     bottom: 0;
     left: 0;
     margin: auto;
+    opacity: .03;
+}
+
+#digital.active {
+    opacity: 1;
 }
 
 #digital > span {
@@ -22,7 +27,6 @@
 #digital > div > div > .line {
     width: 10px;
     height: 10px;
-    /* background-color: var(--primary); */
     border-radius: 20px;
     height: 100px;
     width: 10px;
@@ -93,4 +97,28 @@
 #digital > div > div > .line.active {
     background-color: white !important;
     box-shadow: 0px 0px 5px 0px #e0e0e0;
+}
+
+@media (max-width: 1110px) {
+    #digital {
+        transform: scale(.8);
+    }
+}
+
+@media (max-width: 900px) {
+    #digital {
+        transform: scale(.6);
+    }
+}
+
+@media (max-width: 700px) {
+    #digital {
+        transform: scale(.4);
+    }
+}
+
+@media (max-width: 450px) {
+    #digital {
+        transform: scale(.25);
+    }
 }

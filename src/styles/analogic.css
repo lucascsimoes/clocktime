@@ -10,7 +10,11 @@
     height: auto;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    opacity: .2;
+    opacity: .03;
+}
+
+#analogic.active {
+    opacity: 1;
 }
 
 #analogic::after {
