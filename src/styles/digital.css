@@ -20,8 +20,10 @@
 }
 
 #digital > span {
-    color: white;
-    font-size: 100px;
+    color: #fff;
+    font-size: 110px;
+    text-shadow: #fff 0 0 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #digital > div > div > .line {
@@ -30,6 +32,7 @@
     border-radius: 20px;
     height: 100px;
     width: 10px;
+    transition: background-color .3s, box-shadow .3s;
 }
 
 #digital > div {
@@ -46,13 +49,6 @@
 #digital > div > div > .line:nth-child(3n + 1) {
     width: 100px;
     height: 10px;
-}
-
-#digital > div > div > .line:nth-child(1) {
-}
-
-#digital > div > div > .line:nth-child(2),
-#digital > div > div > .line:nth-child(3) {
 }
 
 #digital > div > div > .line:nth-child(2),
@@ -97,6 +93,7 @@
 #digital > div > div > .line.active {
     background-color: white !important;
     box-shadow: 0px 0px 5px 0px #e0e0e0;
+    transition: background-color .3s, box-shadow .3s;
 }
 
 @media (max-width: 1110px) {

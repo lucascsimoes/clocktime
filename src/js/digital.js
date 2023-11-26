@@ -41,72 +41,141 @@ window.addEventListener("load", () => {
         return now.getHours().toString().padStart(2, "0")
     }
 
+
+    transitionAnimation(getSeconds()[0], lineSecondTwo)
+    transitionAnimation(getMinutes()[1], lineMinuteOne)
+    transitionAnimation(getMinutes()[0], lineMinuteTwo)
+    transitionAnimation(getHours()[1], lineHourOne)
+    transitionAnimation(getHours()[0], lineHourTwo)
+
+
     function firstSecondsDigit(value) {
-        checkValuesForFirst(value, lineSecondOne[0])
-        checkValuesForSecond(value, lineSecondOne[1])
-        checkValuesForThird(value, lineSecondOne[2])
-        checkValuesForFourth(value, lineSecondOne[3])
-        checkValuesForFifth(value, lineSecondOne[4])
-        checkValuesForSixth(value, lineSecondOne[5])
-        checkValuesForSeventh(value, lineSecondOne[6])
+        transitionAnimation(value, lineSecondOne)
     }
 
     function secondSecondsDigit(value) {
-        checkValuesForFirst(value, lineSecondTwo[0])
-        checkValuesForSecond(value, lineSecondTwo[1])
-        checkValuesForThird(value, lineSecondTwo[2])
-        checkValuesForFourth(value, lineSecondTwo[3])
-        checkValuesForFifth(value, lineSecondTwo[4])
-        checkValuesForSixth(value, lineSecondTwo[5])
-        checkValuesForSeventh(value, lineSecondTwo[6])
+        if (getSeconds()[1] == 0) transitionAnimation(value, lineSecondTwo)
     }
 
     function firstMinutesDigit(value) {
-        checkValuesForFirst(value, lineMinuteOne[0])
-        checkValuesForSecond(value, lineMinuteOne[1])
-        checkValuesForThird(value, lineMinuteOne[2])
-        checkValuesForFourth(value, lineMinuteOne[3])
-        checkValuesForFifth(value, lineMinuteOne[4])
-        checkValuesForSixth(value, lineMinuteOne[5])
-        checkValuesForSeventh(value, lineMinuteOne[6])
+        if (getSeconds() == "00") transitionAnimation(value, lineMinuteOne)
+        
     }
 
     function secondMinutesDigit(value) {
-        checkValuesForFirst(value, lineMinuteTwo[0])
-        checkValuesForSecond(value, lineMinuteTwo[1])
-        checkValuesForThird(value, lineMinuteTwo[2])
-        checkValuesForFourth(value, lineMinuteTwo[3])
-        checkValuesForFifth(value, lineMinuteTwo[4])
-        checkValuesForSixth(value, lineMinuteTwo[5])
-        checkValuesForSeventh(value, lineMinuteTwo[6])
+        if (getMinutes()[1] == 0 && getSeconds() == "00") transitionAnimation(value, lineMinuteTwo)
     }
 
     function firstHoursDigit(value) {
-        checkValuesForFirst(value, lineHourOne[0])
-        checkValuesForSecond(value, lineHourOne[1])
-        checkValuesForThird(value, lineHourOne[2])
-        checkValuesForFourth(value, lineHourOne[3])
-        checkValuesForFifth(value, lineHourOne[4])
-        checkValuesForSixth(value, lineHourOne[5])
-        checkValuesForSeventh(value, lineHourOne[6])
+        if (getMinutes() == "00" && getSeconds() == "00") transitionAnimation(value, lineHourOne)
     }
 
     function secondHoursDigit(value) {
-        checkValuesForFirst(value, lineHourTwo[0])
-        checkValuesForSecond(value, lineHourTwo[1])
-        checkValuesForThird(value, lineHourTwo[2])
-        checkValuesForFourth(value, lineHourTwo[3])
-        checkValuesForFifth(value, lineHourTwo[4])
-        checkValuesForSixth(value, lineHourTwo[5])
-        checkValuesForSeventh(value, lineHourTwo[6])
+        if (getHours()[1] == 0 && getMinutes() == "00" && getSeconds() == "00") transitionAnimation(value, lineHourTwo)
     }
 
-    function checkValuesForFirst(value, element) { switch (value) { case "1": case "4": element.classList.remove("active"); break; default: element.classList.add("active"); } }
-    function checkValuesForSecond(value, element) { switch (value) { case "1": case "2": case "3": case "7": element.classList.remove("active"); break; default: element.classList.add("active"); } }
-    function checkValuesForThird(value, element) { switch (value) { case "5": case "6": element.classList.remove("active"); break; default: element.classList.add("active"); } }
-    function checkValuesForFourth(value, element) { switch (value) { case "1": case "7": case "0": element.classList.remove("active"); break; default: element.classList.add("active"); } }
-    function checkValuesForFifth(value, element) { switch (value) { case "1": case "3": case "4": case "5": case "7": case "9": element.classList.remove("active"); break; default: element.classList.add("active"); } }
-    function checkValuesForSixth(value, element) { switch (value) { case "2": element.classList.remove("active"); break; default: element.classList.add("active"); } }
-    function checkValuesForSeventh(value, element) { switch (value) { case "1": case "4": case "7": element.classList.remove("active"); break; default: element.classList.add("active"); } }
+    function transitionAnimation(value, element) {
 
+        for (let i = 0; i < element.length; i++) element[i].classList.remove("active");
+
+        if (value == "1") animationOne(element)
+        if (value == "2") animationTwo(element)
+        if (value == "3") animationThree(element)
+        if (value == "4") animationFour(element)
+        if (value == "5") animationFive(element)
+        if (value == "6") animationSix(element)
+        if (value == "7") animationSeven(element)
+        if (value == "8") animationEight(element)
+        if (value == "9") animationNine(element)
+        if (value == "0") animationZero(element)
+    }
+
+    function animationOne(element) {
+        let delay = -100;
+        setTimeout(() => element[2].classList.add("active"), delay += 100)
+        setTimeout(() => element[5].classList.add("active"), delay += 100)
+    }
+
+    function animationTwo(element) {
+        let delay = -100;
+        setTimeout(() => element[0].classList.add("active"), delay += 100)
+        setTimeout(() => element[2].classList.add("active"), delay += 100)
+        setTimeout(() => element[3].classList.add("active"), delay += 100)
+        setTimeout(() => element[4].classList.add("active"), delay += 100)
+        setTimeout(() => element[6].classList.add("active"), delay += 100)
+    }
+
+    function animationThree(element) {
+        let delay = -100;
+        setTimeout(() => element[0].classList.add("active"), delay += 100)
+        setTimeout(() => element[2].classList.add("active"), delay += 100)
+        setTimeout(() => element[3].classList.add("active"), delay += 100)
+        setTimeout(() => element[5].classList.add("active"), delay += 100)
+        setTimeout(() => element[6].classList.add("active"), delay += 100)
+    }
+
+    function animationFour(element) {
+        let delay = -100;
+        setTimeout(() => element[1].classList.add("active"), delay += 100)
+        setTimeout(() => element[3].classList.add("active"), delay += 100)
+        setTimeout(() => element[2].classList.add("active"), delay += 100)
+        setTimeout(() => element[5].classList.add("active"), delay += 100)
+    }
+
+    function animationFive(element) {
+        let delay = -100;
+        setTimeout(() => element[0].classList.add("active"), delay += 100)
+        setTimeout(() => element[1].classList.add("active"), delay += 100)
+        setTimeout(() => element[3].classList.add("active"), delay += 100)
+        setTimeout(() => element[5].classList.add("active"), delay += 100)
+        setTimeout(() => element[6].classList.add("active"), delay += 100)
+    }
+
+    function animationSix(element) {
+        let delay = -100;
+        setTimeout(() => element[0].classList.add("active"), delay += 100)
+        setTimeout(() => element[1].classList.add("active"), delay += 100)
+        setTimeout(() => element[4].classList.add("active"), delay += 100)
+        setTimeout(() => element[6].classList.add("active"), delay += 100)
+        setTimeout(() => element[5].classList.add("active"), delay += 100)
+        setTimeout(() => element[3].classList.add("active"), delay += 100)
+    }
+
+    function animationSeven(element) {
+        let delay = -100;
+        setTimeout(() => element[0].classList.add("active"), delay += 100)
+        setTimeout(() => element[2].classList.add("active"), delay += 100)
+        setTimeout(() => element[5].classList.add("active"), delay += 100)
+    }
+
+    function animationEight(element) {
+        let delay = -100;
+        setTimeout(() => element[0].classList.add("active"), delay += 100)
+        setTimeout(() => element[1].classList.add("active"), delay += 100)
+        setTimeout(() => element[3].classList.add("active"), delay += 100)
+        setTimeout(() => element[5].classList.add("active"), delay += 100)
+        setTimeout(() => element[6].classList.add("active"), delay += 100)
+        setTimeout(() => element[4].classList.add("active"), delay += 100)
+        setTimeout(() => element[2].classList.add("active"), delay += 100)
+    }
+
+    function animationNine(element) {
+        let delay = -100;
+        setTimeout(() => element[0].classList.add("active"), delay += 100)
+        setTimeout(() => element[1].classList.add("active"), delay += 100)
+        setTimeout(() => element[3].classList.add("active"), delay += 100)
+        setTimeout(() => element[2].classList.add("active"), delay += 100)
+        setTimeout(() => element[5].classList.add("active"), delay += 100)
+        setTimeout(() => element[6].classList.add("active"), delay += 100)
+    }
+
+    function animationZero(element) {
+        let delay = -100;
+        setTimeout(() => element[0].classList.add("active"), delay += 100)
+        setTimeout(() => element[2].classList.add("active"), delay += 100)
+        setTimeout(() => element[5].classList.add("active"), delay += 100)
+        setTimeout(() => element[6].classList.add("active"), delay += 100)
+        setTimeout(() => element[4].classList.add("active"), delay += 100)
+        setTimeout(() => element[1].classList.add("active"), delay += 100)
+    }
 })
